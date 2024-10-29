@@ -49,6 +49,20 @@
 <script>
 const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
 
+const bandUi= document.querySelector('#bands');
+
+function strip(bandName){
+ return bandName.replace(/\b(a|an|the)\b\s*/gi, '').trim();
+
+}
+
+ const sortbnd=bands.sort((a,b)=>strip(a).localeCompare(strip(b)));
+
+bandUi.innerHTML= sortbnd.map(bnd=>`<li>${bnd}</li>`).join('');
+
+
+
+console.log(bandUi);
 
 </script>
 
