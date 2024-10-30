@@ -9,9 +9,57 @@
 
   <script>
     // start with strings, numbers and booleans
+    let age = 100;
+    let age2=age;
+    console.log(age,age2);
+    age=500;
+    console.log(age,age2);
 
+
+    let name='Wes';
+    let name2=name;
+    console.log(name,name2);
+    name='Weshliy';
+    console.log(name,name2);
     // Let's say we have an array
     const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+    const team=players;
+
+    console.log(players,team);
+
+    team[2]='Kuchv';
+
+    console.log(players,team);
+
+    const team2=players.slice();
+
+    console.log(players,team2);
+    team2[2]='KyaBole';
+
+    console.log(players,team2);
+
+
+    const team3= [].concat(players);
+
+    console.log('tesra Array',players,team3);
+
+    team3[2]='Naya Kuch maan lo';
+
+    console.log('tesra Array',players,team3);
+
+
+    team4=[...players];
+    console.log('Fourth Array',players,team4);
+
+    team4[2]='spread operation';
+    console.log('Fourth Array',players,team4);
+
+
+    team5= Array.from(players);
+    console.log('Fifth Array',players,team5);
+
+    team5[2]='Arrayfrom';
+    console.log('Fifth Array',players,team5);
 
     // and we want to make a copy of it.
 
@@ -40,16 +88,54 @@
     // with Objects
     const person = {
       name: 'Wes Bos',
-      age: 80
+      age: 88
     };
 
     // and think we make a copy:
 
+    const cap=person;
+
+ 
+
+    // cap.num=50;
+
+    // console.log('Object wala part',person,cap);
+
+    const cap2=Object.assign({},person);
+
+    cap2.num=99;
+
+    console.log('Assign',person,cap2);
     // how do we take a copy instead?
 
     // We will hopefully soon see the object ...spread
 
+    const cap3={...person};
+
+    console.log(cap3);
+
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
+
+    const wes = {
+      name: 'Wes',
+      age: 100,
+      social: {
+        twitter: '@wesbos',
+        facebook: 'wesbos.developer'
+      }
+    };
+
+
+    console.clear();
+
+    // const level=Object.assign({},wes);
+    const level={...wes};
+    level.name='Aarush.developer';
+
+    console.log(level);
+
+const deepCopy = JSON.parse(JSON.stringify(wes));
+console.log(deepCopy);
 
   </script>
 
